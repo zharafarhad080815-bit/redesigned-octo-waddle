@@ -1,0 +1,53 @@
+<!--A JavaScript object that stores your own contact details and displays them on a webpage using both dot notation and bracket notation.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>My Phone Contact</title>
+    </head>
+    <body>
+        <h1 id="my-phone-contact">My Phone Contact</h1>
+        <p>This activity demonstrates the use of JavaScript objects and how to access their properties using dot notation and bracket notation.</p>
+        <p id="contact-details"></p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Contact Details</h2>
+                    <p id="contact-details1"></p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Contact Information</h5>
+                            <p class="card-text" id="contact-details2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Create a contact object with your own details
+            let contact = {
+                firstName: "Zhara",
+                lastName: "Farhad",
+                phoneNumber: "+1-609-515-3291",
+                email: "zhara.farhad@example.com"
+            };
+
+            // Display contact details using dot notation
+            document.getElementById("contact-details1").innerHTML = `
+                <strong>First Name:</strong> ${contact.firstName}<br>
+                <strong>Last Name:</strong> ${contact.lastName}<br>
+                <strong>Phone Number:</strong> ${contact.phoneNumber}<br>
+                <strong>Email:</strong> ${contact.email}
+                `;
+            document.getElementById("contact-details2").innerHTML = `
+                <strong>First Name:</strong> ${contact["firstName"]}<br>
+                <strong>Last Name:</strong> ${contact["lastName"]}<br>
+                <strong>Phone Number:</strong> ${contact["phoneNumber"]}<br>
+                <strong>Email:</strong> ${contact["email"]}
+            `;
+        </script>
+    </body>
+</html>
